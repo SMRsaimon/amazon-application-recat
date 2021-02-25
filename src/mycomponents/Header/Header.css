@@ -1,0 +1,71 @@
+/* manin logo top */
+
+.img-container {
+  text-align: center;
+}
+
+.logoImg {
+  width: 250px;
+}
+
+/* Navigration amnue  */
+.navigation-conatiner {
+  background-color: black;
+  width: 100%;
+}
+.navigation-conatiner ul {
+  display: flex;
+  line-height: 50px;
+}
+.navigation-conatiner li {
+  list-style-type: none;
+}
+
+.navigation-conatiner li a {
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.navigation-conatiner li a:hover {
+  color: gray;
+}
+
+/* Search-Box Start  */
+
+.search-box {
+  width: 100%;
+  background-color: #1d1a1a;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.search-box .search {
+  padding: 0.3rem;
+  width: 70%;
+  outline: none;
+  font-size: 1rem;
+  color: dimgrey;
+}
+
+/* search-with-shoppping-cut */
+
+.search-with-shoppping-cut a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.search-with-shoppping-cut .shopping-cut {
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  margin-left: 0.5rem;
+}
+
+.total-cut {
+  color: rgb(255, 0, 85);
+  font-weight: 800;
+  font-size: 1.5rem;
+  position: relative;
+  right: 23px;
+  bottom: 15px;
+}
