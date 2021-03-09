@@ -3,6 +3,7 @@ import logo from "../../ema-john-simple-resources-master/images/logo.png";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
@@ -13,23 +14,23 @@ const Header = (props) => {
       <div className="navigation-conatiner">
         <ul>
           <li>
-            <a href="/Shop">Shop</a>
+            <Link to="/Shop">Shop </Link>
           </li>
           <li>
-            <a href="/Review">Order Review</a>
+            <Link to="/Review">Order Review</Link>
           </li>
           <li>
-            <a href="/Inventory">Manage Inventory Here</a>
+            <Link to="/Inventory">Manage Inventory Here</Link>
           </li>
         </ul>
       </div>
       <div className="search-box">
         <input className="search" type="search" name="searchBox" id="search" placeholder="Search Your Iteam " />
         <span className="search-with-shoppping-cut">
-          <a href="/#">
+          <Link to="/">
             <FontAwesomeIcon className="shopping-cut" icon={faCartArrowDown} />
             <span className="total-cut"> {props.totaoCut}</span>
-          </a>
+          </Link>
         </span>
       </div>
     </div>
