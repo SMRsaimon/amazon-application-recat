@@ -1,0 +1,7 @@
+.order-review-Container {
+  display: flex;
+  justify-content: space-between;
+}
+.review-card-Container {
+  flex-basis: 50%;
+}
