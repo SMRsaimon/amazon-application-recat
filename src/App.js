@@ -1,33 +1,60 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Header from "./mycomponents/Header/Header";
-import fakeData from "./ema-john-simple-resources-master/fakeData";
 import Shop from "./mycomponents/Header/Shop/Shop";
+import OrderReview from "./mycomponents/OrderReview/OrderReview";
+import Inventory from "./mycomponents/Inventory/Inventory";
+import NotFound from "./mycomponents/NotFound/NotFound";
+import BodyContent from "./mycomponents/BodyContent/BodyContent.js";
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import ProductDetails from "./mycomponents/ProductDetails/ProductDetails";
+
+
 
 function App() {
-  const [products, setProducts] = useState(fakeData.slice(0, 50));
-  const [cut, setCut] = useState([]);
 
-  const onHendelChange = (product) => {
-    const newCut = [...cut, product];
-    setCut(newCut);
-  };
-  console.log(cut);
 
   return (
-    <div className="main-container">
-      <Header totaoCut={cut.length}></Header>
-      <div className="main-body">
-        <div className="body-product">
-          {products.map((product) => (
-            <Shop onHendelChange={onHendelChange} products={product}></Shop>
-          ))}
-        </div>
-        <div className="order-summary">
-          <h1>hello</h1>
-        </div>
-      </div>
-    </div>
+
+    <Router>
+      <Header></Header>
+      <Switch>
+        <Route exact path="/">
+          <BodyContent></BodyContent>
+        </Route>
+        <Route path="/Shop">
+          <BodyContent></BodyContent>
+
+        </Route>
+        <Route path="/Review">
+
+          <OrderReview></OrderReview>
+
+        </Route>
+        <Route path="/Inventory">
+
+          <Inventory></Inventory>
+        </Route>
+        <Route path="/product/:productKey">
+          <ProductDetails></ProductDetails>
+        </Route>
+
+        <Route path="*">
+
+          <NotFound></NotFound>
+        </Route>
+
+      </Switch>
+
+    </Router>
+
   );
 }
 

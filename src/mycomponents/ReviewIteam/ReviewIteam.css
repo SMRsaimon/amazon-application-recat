@@ -1,0 +1,14 @@
+.review-iteam-container {
+  text-align: center;
+  width: 50%;
+  margin-bottom: 10px;
+  border-bottom: 3px solid gray;
+
+  padding: 5px 30px;
+}
+.review-iteam-container h3 {
+  color: rgb(47, 0, 255);
+}
+.review-iteam-container img {
+  width: 100px;
+}

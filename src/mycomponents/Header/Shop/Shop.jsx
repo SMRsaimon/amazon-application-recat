@@ -2,9 +2,9 @@ import React from "react";
 import "./Shop.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Shop = (props) => {
-  // console.log(props.products.price);
   const { img, name, key, seller, category, price, stock } = props.products;
   return (
     <div className="single-product-container" key={key}>
@@ -12,7 +12,9 @@ const Shop = (props) => {
         <img src={img} alt="product-img-loading" />
       </div>
       <div className="img-discription-container">
-        <h3 className="name">{name}</h3>
+        <h3 className="name">
+          <Link to={"/product/" + key}>{name}</Link>
+        </h3>
         <p>
           <small>By: {seller}</small>
         </p>
@@ -20,9 +22,12 @@ const Shop = (props) => {
         <p>
           <small>Only- {stock} left in stock - order soon</small>
         </p>
-        <button className="product-button" onClick={() => props.onHendelChange(props.products)}>
-          <FontAwesomeIcon className="button-shopping-cut" icon={faCartPlus} /> add to cut
-        </button>
+        {props.disableAdtoCut && (
+          <button className="product-button" onClick={() => props.onHendelChange(props.products)}>
+            <FontAwesomeIcon className="button-shopping-cut" icon={faCartPlus} />
+            add to cut
+          </button>
+        )}
       </div>
     </div>
   );

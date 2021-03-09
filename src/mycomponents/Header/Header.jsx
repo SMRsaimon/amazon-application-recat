@@ -16,7 +16,7 @@ const Header = (props) => {
             <a href="/Shop">Shop</a>
           </li>
           <li>
-            <a href="/Order">Order Review</a>
+            <a href="/Review">Order Review</a>
           </li>
           <li>
             <a href="/Inventory">Manage Inventory Here</a>
